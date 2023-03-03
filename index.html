@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+    <script src="https://unpkg.com/vue@next"></script>
+    <title>Document</title>
+</head>
+<body>
+    
+    <div id = "app">
+
+        <h3>String manipulation</h3>
+        <p>
+            <input type="text" v-model.lazy="word" placeholder="Indtast et ord">
+            <button v-on:click="addWord()" class="btn btn-primary">getInputText</button>
+        </p>
+        <h2> ordliste </h2>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Indtastet ord</th>
+                    <th scope="col">Ordet i lower case</th>
+                    <th scope="col">Ordet i upper case</th>
+                    <th scope="col">Ordet med stort forbogstav</th>
+                    <th scope="col">Ordet med stort bagbogstav</th>
+                    <th scope="col">Ordet omvendt</th>
+                </tr>
+            </thead>
+            <tbody>
+                    <tr v-for="(word,index) in words" :key ="index">
+                        <td>{{word.original}}</td>
+                        <td>{{word.lower}}</td>
+                        <td>{{word.upper}}</td>
+                        <td>{{word.capitalized}}</td>
+                        <td>{{word.endcapitalized}}</td>
+                        <td>{{word.join}}</td>
+                    </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="js/index.js"></script>
+</body>
+</html>
