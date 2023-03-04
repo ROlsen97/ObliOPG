@@ -18,25 +18,54 @@
             <button v-on:click="addWord()" class="btn btn-primary">getInputText</button>
         </p>
         <h2> ordliste </h2>
+        <ul v-for="word in words">
+            <li>{{word.original}}</li>
+            <li>{{word.lower}}</li>
+            <li>{{word.upper}}</li>
+            <li>{{word.capitalized}}</li>
+            <li>{{word.endcapitalized}}</li>
+            <li>{{word.join}}</li>
+        </ul>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Indtastet ord</th>
-                    <th scope="col">Ordet i lower case</th>
-                    <th scope="col">Ordet i upper case</th>
-                    <th scope="col">Ordet med stort forbogstav</th>
-                    <th scope="col">Ordet med stort bagbogstav</th>
-                    <th scope="col">Ordet omvendt</th>
+                    <!--
+                    <th scope="col">lower</th>
+                    <th scope="col">upper</th>
+                    <th scope="col">cap</th>
+                    <th scope="col">endcap</th>
+                    <th scope="col">reversed</th>
+                    -->
                 </tr>
             </thead>
             <tbody>
-                    <tr v-for="(word,index) in words" :key ="index">
-                        <td>{{word.original}}</td>
-                        <td>{{word.lower}}</td>
-                        <td>{{word.upper}}</td>
-                        <td>{{word.capitalized}}</td>
-                        <td>{{word.endcapitalized}}</td>
-                        <td>{{word.join}}</td>
+                    <!--<tr v-for="word1 in words">
+                        <td>{{word1.original}}</td>
+                        <td>{{word1.lower}}</td>
+                        <td>{{word1.upper}}</td>
+                        <td>{{word1.capitalized}}</td>
+                        <td>{{word1.endcapitalized}}</td>
+                        <td>{{word1.join}}</td>
+                    </tr>-->
+
+                    <tr v-for="word2 in words">
+                        <td>{{word2.original}}</td>
+                    </tr>
+                    <tr v-for="word2 in words">
+                        <td>{{word2.lower}}</td>
+                    </tr>
+                    <tr v-for="word2 in words">
+                        <td>{{word2.upper}}</td>
+                    </tr>
+                    <tr v-for="word2 in words">
+                        <td>{{word2.capitalized}}</td>
+                    </tr>
+                    <tr v-for="word2 in words">
+                        <td>{{word2.endcapitalized}}</td>
+                    </tr>
+                    <tr v-for="word2 in words">
+                        <td>{{word2.join}}</td>
                     </tr>
             </tbody>
         </table>
